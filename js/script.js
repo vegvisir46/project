@@ -1,17 +1,15 @@
 "use strict";
 
-//let a = confirm("Cho kak?");
-//console.log(a);
 
-let bbb = prompt("DR", "xx.xx.xxxx");
-console.log(bbb);
+let numberOfFilms = prompt("How much films do u see?");
+console.log (numberOfFilms);
 
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+}
 
-
-//let number = 5;
-//const leftBorderWidth = 1;
-//const leftBorderWidth = 5;
-
-
-
-//console.log(number);
+personalMovieDB.movies = prompt();
