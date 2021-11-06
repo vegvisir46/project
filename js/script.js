@@ -51,7 +51,7 @@ let personalMovieDB = {
     
     getGenres: () => {
         for (let i = 1; i <= 3; i++){
-            let q = prompt (`Какой ваш топ-${i} жанр?`,'');
+            let q = prompt (`Какой ваш топ-${i} жанр?`, '').toLowerCase();
             if(q == null || q == "") {
                 i--;
                 alert("Произошла ошибка.\nВозможные варианты ошибки:\n1. Пустой ответ\n2. Вы нажали отмена");
@@ -59,7 +59,7 @@ let personalMovieDB = {
                 personalMovieDB.genres [i-1] = q;
             }
         }
-        personalMovieDB.genres.forEach(function(item, num, wholeArray) {
+        personalMovieDB.genres.forEach((item, num, wholeArray) => {
             console.log(`Любимый жанр ${num}: ${item}`);
         });
     },
