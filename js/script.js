@@ -37,7 +37,7 @@ let personalMovieDB = {
             
             if((q1 == null) || (q2 == null) || (q1.length>5) || (q2.length>5) || (q1 == "") || (q2 == "")){
                 i--;
-                alert("Возможные варианты ошибки:\n1. Длина\n2. Пустой ответ\n3. Вы нажали отмена");
+                alert("Произошла ошибка.\nВозможные варианты ошибки:\n1. Длина\n2. Пустой ответ\n3. Вы нажали отмена");
             } else {personalMovieDB.movies[q1] = q2;}
         }
     },
@@ -45,7 +45,15 @@ let personalMovieDB = {
     getGenres: function() {
         for (let i = 1; i <= 3; i++){
             personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
+            let q = personalMovieDB.genres [i-1];
+            if(q == null || q == "") {
+                i--;
+                alert("Произошла ошибка.\nВозможные варианты ошибки:\n1. Пустой ответ\n2. Вы нажали отмена");
+            }
         }
+        this.genres.forEach(function(item, num, wholeArray) {
+            console.log(`Любимый жанр ${num}: ${item}`);
+        });
     },
     
     showMyBD: function(){
@@ -228,11 +236,11 @@ console.log(count());
 
 //*********************************************************************************************************
 //_____________M A S S I V E S_____________
-/*
-const arr = [2, 13, 26, 8, 10];
+
+// const arr = [2, 13, 26, 8, 10];
 
 //arr[99] = 0; //пуш элемента на 99ую позицию массива
-//console.log(arr.length); //демонстрация сущности .length
+//console.log(arr.length); //и демонстрация сущности .length
 
 //arr.pop(); //удаление последнего значения массива
 //arr.push(10); //пуш нового элемента в конец массива
@@ -240,37 +248,37 @@ const arr = [2, 13, 26, 8, 10];
 
 // **виды переборов элементов массива**
 
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-} //перебор элементов массива
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// } //перебор элементов массива
 
-for (let value of arr) {
-    console.log(value);
-    //тут можно юзать break и continue
-}
+// for (let value of arr) {
+//     console.log(value);
+//     //тут можно юзать break и continue
+// }
 
-arr.forEach(function(item, i, arr) {
-    console.log(`${i}: ${item} внутри массива ${arr}`);
-});
-
-
-// **формирование массива из строки и наоборот, сортировка**
-
-const str = prompt("","");
-const products = str.split(", ") //массив из строки
-console.log(products);
-console.log(products.join('; ')); //строка из массива
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
 
 
-products.sort(); //сортировка строчная
+// // **формирование массива из строки и наоборот, сортировка**
 
-arr.sort(compareNum); //сортировка численная
-function compareNum(a, b){
-    return a-b;
-}
+// const str = prompt("","");
+// const products = str.split(", ") //массив из строки
+// console.log(products);
+// console.log(products.join('; ')); //строка из массива
 
-console.log(arr);
-*/
+
+// products.sort(); //сортировка строчная
+
+// arr.sort(compareNum); //сортировка численная
+// function compareNum(a, b){
+//     return a-b;
+// }
+
+// console.log(arr);
+
 // *********************************************************************************************************
 
 
