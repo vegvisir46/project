@@ -498,9 +498,9 @@ const newObj = {...q};
 
 // alert (+"Infinity"); //Infinity
 
-
-
-
+//d
+let d = 0;
+alert (d);
 
 
 
