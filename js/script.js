@@ -474,8 +474,6 @@ const newObj = {...q};
 // console.log(typeof([]+false+1)); // string "false1"
 // console.log([]+false+true); // "falsetrue"
 
-
-
 // let y = 1;
 // let x = y = 2;
 // alert(x); // 2
@@ -484,13 +482,13 @@ const newObj = {...q};
 
 // alert ("1"[0]); //1 - нулевой символ строки
 
-// console.log(2 && 1 && null && undefined); //null - && запинается на лжи, || запинается на правда.
-
 // let a, b;
 // console.log(!!(a && b));    //false
 // console.log(a && b);        //undefined
 
-//alert (null || 2 && 3 || 4); //3
+// && ищет false и возвращает последнее true, || ищет true и возвращает последнее false
+// console.log(2 && 1 && null && undefined);   //null
+//alert (null || 2 && 3 || 4);   //3
 
 // let a = [1, 2, 3],
 //     b = [1, 2, 3];
@@ -498,11 +496,11 @@ const newObj = {...q};
 
 // alert (+"Infinity"); //Infinity
 
+// ("Ёжик" > "яблоко") ? console.log("true") : console.log("false"); // false
 
+// console.log(0 || "" || 2 || undefined || true || false);
 
-
-
-
+// прошел 27й урок
 
 
 
