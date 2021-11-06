@@ -23,23 +23,21 @@ let personalMovieDB = {
     genres: [],
     privat: true,
 
-    start: function () {
-        let numberOfFilms;
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    start:  () => {
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
-        this.count = numberOfFilms;
     },
     
-    showLevel: function(){
+    showLevel: () => {
         let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
         (personalMovieDB.count <= 30) ? "Вы классический зверь" :
         (personalMovieDB.count > 30) ? "Вы киноман" : "Произошла ошибка";
         alert (stat);
     },
     
-    getLastFilms: function() { 
+    getLastFilms: () => { 
         for (let i = 0; i < 2; i++) {
             let q1 = prompt ('Один из последних просмотренных фильмов?', '');
             let q2 = prompt ('На сколько оцените его?', '');
@@ -51,31 +49,32 @@ let personalMovieDB = {
         }
     },
     
-    getGenres: function() {
+    getGenres: () => {
         for (let i = 1; i <= 3; i++){
-            personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
-            let q = personalMovieDB.genres [i-1];
+            let q = prompt (`Какой ваш топ-${i} жанр?`,'');
             if(q == null || q == "") {
                 i--;
                 alert("Произошла ошибка.\nВозможные варианты ошибки:\n1. Пустой ответ\n2. Вы нажали отмена");
+            } else {
+                personalMovieDB.genres [i-1] = q;
             }
         }
-        this.genres.forEach(function(item, num, wholeArray) {
+        personalMovieDB.genres.forEach(function(item, num, wholeArray) {
             console.log(`Любимый жанр ${num}: ${item}`);
         });
     },
     
-    showMyBD: function(){
+    showMyBD: () => {
         if (personalMovieDB.privat == false) {
             console.log(personalMovieDB);
         }
     },
 
-    toggleVisibleDB: function() {
-        if(personalMovieDB.privat == false) {
-            personalMovieDB.privat = true;
-        } else {
+    toggleVisibleDB: () => {
+        if(personalMovieDB.privat) {
             personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
         }
     }
 }
