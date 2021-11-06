@@ -21,47 +21,99 @@ let personalMovieDB = {
     movies: {},
     actors: {},
     genres: [],
-    privat: false
+    privat: true,
+    
+    showLevel: function(){
+        let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
+        (personalMovieDB.count <= 30) ? "Вы классический зверь" :
+        (personalMovieDB.count > 30) ? "Вы киноман" : "Произошла ошибка";
+        alert (stat);
+    },
+    
+    getLastFilms: function() { 
+        for (let i = 0; i < 2; i++) {
+            let q1 = prompt ('Один из последних просмотренных фильмов?', '');
+            let q2 = prompt ('На сколько оцените его?', '');
+            
+            if((q1 == null) || (q2 == null) || (q1.length>5) || (q2.length>5) || (q1 == "") || (q2 == "")){
+                i--;
+                alert("Возможные варианты ошибки:\n1. Длина\n2. Пустой ответ\n3. Вы нажали отмена");
+            } else {personalMovieDB.movies[q1] = q2;}
+        }
+    },
+    
+    getGenres: function() {
+        for (let i = 1; i <= 3; i++){
+            personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
+        }
+    },
+    
+    showMyBD: function(){
+        if (personalMovieDB.privat == false) {
+            console.log(personalMovieDB);
+        }
+    },
+
+    toggleVisibleDB: function() {
+        if(personalMovieDB.privat == false) {
+            personalMovieDB.privat = true;
+        } else {
+            personalMovieDB.privat = false;
+        }
+    }
 }
+personalMovieDB.showLevel();
+personalMovieDB.getLastFilms();
+personalMovieDB.getGenres();
+personalMovieDB.toggleVisibleDB();
+personalMovieDB.showMyBD();
+
+
+
+
+
+
+
+
+
 
 // __Ф У Н К Ц И Я__ Уровень
-function detectPersonalLevel(){
-    let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
-    (personalMovieDB.count <= 30) ? "Вы классический зверь" :
-    (personalMovieDB.count > 30) ? "Вы киноман" : "Произошла ошибка";
-    alert (stat);
-}
-detectPersonalLevel();
+// function detectPersonalLevel(){
+//     let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
+//     (personalMovieDB.count <= 30) ? "Вы классический зверь" :
+//     (personalMovieDB.count > 30) ? "Вы киноман" : "Произошла ошибка";
+//     alert (stat);
+// }
+// detectPersonalLevel();
 
 // __Ф У Н К Ц И Я__ Последние фильмы
-function rememberMyFilms() { 
-    for (let i = 0; i < 2; i++) {
-        let q1 = prompt ('Один из последних просмотренных фильмов?', '');
-        let q2 = prompt ('На сколько оцените его?', '');
-        
-        if((q1 == null) || (q2 == null) || (q1.length>5) || (q2.length>5) || (q1 == "") || (q2 == "")){
-            i--;
-            alert("Возможные варианты ошибки:\n1. Длина\n2. Пустой ответ\n3. Вы нажали отмена");
-        } else {personalMovieDB.movies[q1] = q2;}
-    }
-}
-rememberMyFilms();
+// function rememberMyFilms() { 
+//     for (let i = 0; i < 2; i++) {
+//         let q1 = prompt ('Один из последних просмотренных фильмов?', '');
+//         let q2 = prompt ('На сколько оцените его?', '');
+//         if((q1 == null) || (q2 == null) || (q1.length>5) || (q2.length>5) || (q1 == "") || (q2 == "")){
+//             i--;
+//             alert("Возможные варианты ошибки:\n1. Длина\n2. Пустой ответ\n3. Вы нажали отмена");
+//         } else {personalMovieDB.movies[q1] = q2;}
+//     }
+// }
+// rememberMyFilms();
 
 // __Ф У Н К Ц И Я__ Жанры
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++){
-        personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
-    }
-}
-writeYourGenres();
+// function writeYourGenres() {
+//     for (let i = 1; i <= 3; i++){
+//         personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
+//     }
+// }
+// writeYourGenres();
 
 // __Ф У Н К Ц И Я__ Выводит ДБ, если профиль не приватный
-function showMyDB(){
-    if (personalMovieDB.privat == false) {
-        console.log(personalMovieDB);
-    }
-}
-showMyDB();
+// function showMyDB(){
+//     if (personalMovieDB.privat == false) {
+//         console.log(personalMovieDB);
+//     }
+// }
+// showMyDB();
 
 
 
