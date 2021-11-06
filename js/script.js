@@ -3,19 +3,8 @@
 // *********************************************************************************************************
 //_________П Р А К Т И К А____________
 
-// let numberOfFilms;
-
-// // ФУНКЦИЯ спрашивает количество фильмов и проверяет корректность ввода
-// function start() {
-//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-
-//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//     }
-// }
-
-
 // ДБ
+/*
 let personalMovieDB = {
     count: "",
     movies: {},
@@ -85,7 +74,7 @@ personalMovieDB.getLastFilms();
 personalMovieDB.getGenres();
 personalMovieDB.toggleVisibleDB();
 personalMovieDB.showMyBD();
-
+*/
 
 
 
@@ -434,6 +423,69 @@ const newObj = {...q};
 // const john = Object.create(soldier);
 // john.sayHello();
 // *********************************************************************************************************
+
+
+
+//*********************************************************************************************************
+//_____________Д И Н А М И Ч  Е С К А Я_____Т И П И З А Ц И Я_____________
+
+//____Получение строки_____
+//1
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
+//2
+// console.log(typeof(null + ''));
+// const num = 5;
+// console.log ("https://vk.com/catalog/" + num);
+// const fontSize = 26 + 'px';
+
+//____Получение числа_____
+//1
+// console.log(typeof(Number('4')));
+//2
+// console.log(typeof(+'4'));
+//3
+// console.log(typeof(parseInt('15px', 10)));
+
+//___Получение boolean
+//1
+// let switcher = null;
+// let switcher = 1;
+// if (switcher) {
+//     console.log('Working...');
+// }
+//2
+// console.log(typeof(Boolean('4')));
+// console.log(Boolean('0'));
+//3
+// console.log(typeof(!!"4444"));
+//*********************************************************************************************************
+
+
+
+//*********************************************************************************************************
+//_____________З А Д А Ч И___С ____С О Б Е С Е Д О В А Н И Й_____________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
