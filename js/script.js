@@ -211,7 +211,7 @@ console.log(copyy);
 console.log(obj);
 */
 
-//поверхностное клонирование
+//поверхностное клонирование О Б Ъ Е К Т А
 /*
 function copy (mainObj) {
     let objCopy = {};
@@ -241,7 +241,7 @@ console.log(newNumbers);
 */
 
 
-//тоже поверхностное клонирование
+//тоже поверхностное клонирование   О Б Ъ Е К Т А   с объединением
 /*
 const add = {
     d: 17,
@@ -254,15 +254,77 @@ console.log(add);
 console.log(clone);
 */
 
-
+//поверхностное клонирование   М А С С И В А
+/*
 const oldArray = ['a', 'b', 'c'];
 const newArray = oldArray.slice();
 newArray[1] = 'd';
 console.log(oldArray);
 console.log(newArray);
+*/
+
+//поверхностное клонирование   М А С С И В А  с объединением
+/*
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+console.log(internet);
+*/
 
 
-//22 урок 17:261
+// разворачиваение   М А С С И В А
+/*
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7, 9];
+
+//log (num[0], num[1], num[2]);
+log (...num);
+*/
+
+// клонирование   М А С С И В А    разворачиваение 
+/*
+const array = ['a', 'b'];
+const newAarray = [...array];
+newAarray[0] = 1;
+console.log(newAarray);
+console.log(array);
+
+const q = {
+    one: 1,
+    two: 2
+};
+*/
+
+
+
+const newObj = {...q};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
