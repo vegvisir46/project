@@ -5,6 +5,7 @@
 
 let numberOfFilms;
 
+// ФУНКЦИЯ спрашивает количество фильмов и проверяет корректность ввода
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
@@ -14,6 +15,7 @@ function start() {
 }
 start();
 
+// ДБ
 let personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -22,6 +24,7 @@ let personalMovieDB = {
     privat: false
 }
 
+// __Ф У Н К Ц И Я__ Уровень
 function detectPersonalLevel(){
     let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
     (personalMovieDB.count <= 30) ? "Вы классический зверь" :
@@ -30,7 +33,8 @@ function detectPersonalLevel(){
 }
 detectPersonalLevel();
 
-function rememberMyFilms() {
+// __Ф У Н К Ц И Я__ Последние фильмы
+function rememberMyFilms() { 
     for (let i = 0; i < 2; i++) {
         let q1 = prompt ('Один из последних просмотренных фильмов?', '');
         let q2 = prompt ('На сколько оцените его?', '');
@@ -43,6 +47,7 @@ function rememberMyFilms() {
 }
 rememberMyFilms();
 
+// __Ф У Н К Ц И Я__ Жанры
 function writeYourGenres() {
     for (let i = 1; i <= 3; i++){
         personalMovieDB.genres [i-1] = prompt (`Ваш любимый жанр под номером ${i}`,'');
@@ -50,6 +55,7 @@ function writeYourGenres() {
 }
 writeYourGenres();
 
+// __Ф У Н К Ц И Я__ Выводит ДБ, если профиль не приватный
 function showMyDB(){
     if (personalMovieDB.privat == false) {
         console.log(personalMovieDB);
