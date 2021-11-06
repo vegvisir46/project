@@ -3,25 +3,34 @@
 // *********************************************************************************************************
 //_________П Р А К Т И К А____________
 
-let numberOfFilms;
+// let numberOfFilms;
 
-// ФУНКЦИЯ спрашивает количество фильмов и проверяет корректность ввода
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// // ФУНКЦИЯ спрашивает количество фильмов и проверяет корректность ввода
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-}
-start();
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     }
+// }
+
 
 // ДБ
 let personalMovieDB = {
-    count: numberOfFilms,
+    count: "",
     movies: {},
     actors: {},
     genres: [],
     privat: true,
+
+    start: function () {
+        let numberOfFilms;
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        }
+        this.count = numberOfFilms;
+    },
     
     showLevel: function(){
         let stat = (personalMovieDB.count < 10) ? "Просмотрено довольно мало фильмов" :
@@ -70,6 +79,8 @@ let personalMovieDB = {
         }
     }
 }
+
+personalMovieDB.start();
 personalMovieDB.showLevel();
 personalMovieDB.getLastFilms();
 personalMovieDB.getGenres();
