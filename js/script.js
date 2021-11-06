@@ -464,21 +464,39 @@ const newObj = {...q};
 
 
 //*********************************************************************************************************
-//_____________З А Д А Ч И___С ____С О Б Е С Е Д О В А Н И Й_____________
+//_____________З А Д А Ч И____С ____С О Б Е С Е Д О В А Н И Й_____________
+
+// let x = 5;
+// alert(x++); // 5
+
+// y = [] + false - null + true;
+// console.log(y); //NaN ??
+// console.log(typeof([]+false+1)); // string "false1"
+// console.log([]+false+true); // "falsetrue"
 
 
 
+// let y = 1;
+// let x = y = 2;
+// alert(x); // 2
 
+// console.log([] + 1 + 2); //12
 
+// alert ("1"[0]); //1 - нулевой символ строки
 
+// console.log(2 && 1 && null && undefined); //null - && запинается на лжи, || запинается на правда.
 
+// let a, b;
+// console.log(!!(a && b));    //false
+// console.log(a && b);        //undefined
 
+//alert (null || 2 && 3 || 4); //3
 
+// let a = [1, 2, 3],
+//     b = [1, 2, 3];
+// (a == b) ? console.log("true") : console.log("false"); // false
 
-
-
-
-
+// alert (+"Infinity"); //Infinity
 
 
 
